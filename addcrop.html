@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Crop</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: url('https://images.pexels.com/photos/1542495/pexels-photo-1542495.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+
+    <a class="back-button" href="javascript:history.go(-1)">Back</a>
+
+    <h1>Crop Management System</h1>
+
+    <form method="POST" action="/addcrop" enctype="multipart/form-data">
+        <h2>Add Crop</h2>
+
+        <!-- Form fields for adding a new crop -->
+        <label for="crop_name">Crop Name:</label>
+        <input type="text" name="crop_name" required>
+
+        <label for="yield_quantity">Yield Quantity:</label>
+        <input type="number" name="yield_quantity" required>
+
+        <label for="harvest_date">Harvest Season:</label>
+        <input type="text" name="harvest_date" required>
+
+        
+        <button type="submit">Add Crop</button>
+    </form>
+
+</body>
+
+</html>

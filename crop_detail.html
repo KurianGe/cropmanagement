@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Detail</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: url('https://images.pexels.com/photos/1542495/pexels-photo-1542495.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        strong {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Crop Management System</h1>
+    </header>
+
+    <main>
+        <h2>Crop Detail</h2>
+        <p><strong>Crop ID:</strong> {{ crop.crop_id }}</p>
+        <p><strong>Crop Name:</strong> {{ crop.crop_name }}</p>
+        <p><strong>Yield Quantity:</strong> {{ crop.yield_quantity }}</p>
+        <p><strong>Harvest Date:</strong> {{ crop.harvest_date }}</p>
+
+        <!-- Add more details as needed -->
+
+        {% if crop.image_url %}
+            <img src="{{ crop.image_url }}" alt="Crop Image">
+        {% else %}
+            <p>No Image</p>
+        {% endif %}
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Crops</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: url('https://images.pexels.com/photos/1542495/pexels-photo-1542495.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Crop Management System</h1>
+    </header>
+
+    <h2>Show Crops</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Crop ID</th>
+                <th>Crop Name</th>
+                <th>Yield Quantity</th>
+                <th>Harvest Season</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for crop in allcrops %}
+                <tr>
+                    <td>{{ crop.crop_id }}</td>
+                    <td>{{ crop.crop_name }}</td>
+                    <td>{{ crop.yield_quantity }}</td>
+                    <td>{{ crop.harvest_date }}</td>
+                    <td>
+                       <!-- {% if crop.image_url %}
+                            <img src="{{ crop.image_url }}" alt="Crop Image">
+                        {% else %}
+                            No Image
+                        {% endif %}-->
+                    </td>
+                    <td>
+                        |
+                        <a href="{{ url_for('delete_crop', crop_id=crop.crop_id) }}" onclick="return confirm('Are you sure you want to delete this crop?')">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{{ url_for('add_crop_page') }}">Add Crop</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Crop</title>
+    <!-- Add any additional styles or links if needed -->
+</head>
+<body>
+    <h1>Delete Crop</h1>
+    <p>Are you sure you want to delete this crop?</p>
+
+    <form method="POST" action="{{ url_for('delete_crop', crop_id=crop.crop_id) }}">
+        <button type="submit">Yes, Delete Crop</button>
+    </form>
+
+    <a href="{{ url_for('showcrop') }}">Cancel</a>
+
+    <!-- Add any additional content or styling as needed -->
+</body>
+</html>

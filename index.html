@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Management System</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: url('https://images.pexels.com/photos/1542495/pexels-photo-1542495.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: rgba(76, 175, 80, 0.7); /* Transparent green background */
+            color: #000; /* Black color for text */
+            text-align: center;
+            padding: 40px; /* Increased padding */
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 36px; /* Increased font size */
+        }
+
+        main {
+            margin-top: 80px; /* Adjust this margin based on the header's height */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: #007BFF;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Crop Management System</h1>
+    </header>
+
+    <main>
+        <h2>Welcome to the Home Page</h2>
+
+        <p>
+            A simple solution for farmers to manage crop harvesting
+        </p>
+
+        <ul>
+            <!--li><a href="{{ url_for('showcrop') }}">Show Crops</a></li>
+            <li><a href="{{ url_for('add_crop_page') }}">Add Crop</a></li-->
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+        </ul>
+    </main>
+
+</body>
+
+</html>
